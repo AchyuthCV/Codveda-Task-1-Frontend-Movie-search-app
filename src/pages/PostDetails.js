@@ -80,10 +80,13 @@ function PostDetails() {
     }
   ];
 
-  useEffect(() => {
-    const foundPost = posts.find(p => p.id === parseInt(id));
-    setPost(foundPost);
-  }, [id]);
+useEffect(() => {
+  const foundPost = posts.find(p => p.id === parseInt(id));
+  setPost(foundPost);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [id]);
+
+
 
   if (!post) return <div style={{ padding: '20px' }}>Post not found!</div>;
 
